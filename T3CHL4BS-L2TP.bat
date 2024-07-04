@@ -12,7 +12,7 @@ set VPN_PASS=pass
 set IPSEC=secret
 
 REM Adiciona uma nova entrada VPN
-powershell -command "Add-VpnConnection -Name '%VPN_NAME%' -ServerAddress '%VPN_SERVER%' -TunnelType L2tp -L2tpPsk '%IPSEC%' -AuthenticationMethod Pap -RememberCredential -Force"
+powershell -command "Add-VpnConnection -Name '%VPN_NAME%' -ServerAddress '%VPN_SERVER%' -TunnelType L2tp -L2tpPsk '%IPSEC%' -AuthenticationMethod MSChapv2 -RememberCredential -Force"
 
 REM Conecta à VPN
 rasdial "%VPN_NAME%" %VPN_USER% %VPN_PASS%
